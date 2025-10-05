@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Models\Comment;
+use App\Models\Country;
 
 Route::get('/', function () {
 
@@ -30,6 +31,10 @@ Route::get('/', function () {
 
 //    return Mechanic::with('carOwner')->get();
 
-    return Mechanic::with('car')->get();
+//    return Mechanic::with('car')->get();
+
+    $posts = Country::with('users')->get();
+
+    return $posts;
 
 });
