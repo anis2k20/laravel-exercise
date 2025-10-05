@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Category;
+use App\Models\Mechanic;
 use App\Models\Phone;
 use App\Models\Post;
 use App\Models\User;
@@ -19,10 +20,16 @@ Route::get('/', function () {
 //    $post = Comment::find(4)->post;
 
 
-        $posts = Post::with('categories')->get();
-        $categoryPosts = Category::with('posts')->get();
-      return $categoryPosts;
+//        $posts = Post::with('categories')->get();
+//        $categoryPosts = Category::with('posts')->get();
+//      return $categoryPosts;
 //    $user = Phone::find(1)->user;
 //    return $user.'-'. $phone;
 //    return view('index', compact('users'));
+
+
+//    return Mechanic::with('carOwner')->get();
+
+    return Mechanic::with('car')->get();
+
 });
